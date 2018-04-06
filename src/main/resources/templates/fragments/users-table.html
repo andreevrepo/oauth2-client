@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+</head>
+<body>
+<div th:fragment="users-table">
+    <p class="under-table">All Users</p>
+    <div class="container-fluid white">
+    <div class="table-responsive">
+        <table class="table table-striped" id="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Role</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="user : ${users}">
+                <tr th:id="'tr_' + ${user.id}">
+                    <td th:text="${user.id}"></td>
+                    <td th:text="${user.role.role}"></td>
+                    <td th:text="${user.name}"></td>
+                    <td th:text="${user.email}"></td>
+                    <td th:text="${user.password}"></td>
+                    <td><button class="btn btn-info" data-toggle="modal" th:id="'btn_' + ${user.id}"
+                           data-target="#editModal">Edit</button></td>
+                    <td><a class="btn btn-info" th:href="@{/admin/delete(id=${user.id})}">Delete</a>
+                    </td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+</body>
+</html>

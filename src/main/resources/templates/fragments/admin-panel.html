@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+</head>
+<body>
+<div th:fragment="admin-panel">
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" data-target="#users-table">Users Table</a></li>
+        <li><a data-toggle="tab" data-target="#new-user">New User</a></li>
+    </ul>
+    <div class="tab-content">
+            <div id="users-table" class="tab-pane fade in active">
+            <div th:replace="/fragments/users-table :: users-table"></div>
+            </div>
+            <div id="new-user" class="tab-pane fade">
+            <div th:replace="fragments/new-user :: new-user"></div>
+            </div>
+    </div>
+</div>
+</body>
+</html>

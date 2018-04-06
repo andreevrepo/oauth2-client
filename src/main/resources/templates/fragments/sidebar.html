@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+</head>
+<body>
+<div th:fragment="sidebar">
+    <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+            <li sec:authorize="hasAuthority('ROLE_ADMIN')" th:classappend="${#httpServletRequest.getRequestURI() == '/admin' ? 'active' : ''}"><a th:href="@{/admin}">Admin</a></li>
+            <li th:classappend="${#httpServletRequest.getRequestURI() == '/user' ? 'active' : ''}"><a th:href="@{/user}">User</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

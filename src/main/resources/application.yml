@@ -1,0 +1,25 @@
+spring:
+  thymeleaf:
+    mode: LEGACYHTML5
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 629334753801-ar3b2c5r2e1p9tipsu3sccp5vbam3078.apps.googleusercontent.com
+            client-secret: b_hkX0oQfjBWC57NRQ_TgyUC
+            scope: profile email
+            client-authentication-method: basic
+            authorization-grant-type: authorization_code
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/auth
+            token-uri: https://www.googleapis.com/oauth2/v3/token
+rest:
+  service-uri: http://localhost:8080
+  username: test
+  password: test
+project:
+  project-name: Java Mentor
+server:
+  port: 8081

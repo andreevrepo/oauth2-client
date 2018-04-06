@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+   <div th:replace="fragments/header :: header"></div>
+    <link rel="stylesheet" th:href="@{/css/signin.css}"/>
+</head>
+<body>
+<div style="text-align:center">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <p th:if="${loginError}" class="error">Wrong Credentials</p>
+    <a href="/oauth2/authorization/google"><img width="15%" th:src="@{/img/btn_google_signin.png}"/></a>
+</div>
+</body>
+</html>
