@@ -1,6 +1,7 @@
 spring:
   thymeleaf:
     mode: LEGACYHTML5
+    prefix: classpath:/templates
   security:
     oauth2:
       client:
