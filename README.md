@@ -1,4 +1,4 @@
-<h2>OAuth2 Client</h2>
+<h3>OAuth2 Client</h3>
 
 ![login-page](https://image.ibb.co/dLciHH/2.jpg)
 
